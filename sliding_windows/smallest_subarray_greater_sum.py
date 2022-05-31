@@ -32,6 +32,7 @@ def smallest_subarray_sum(s, arr):
 def smallest_subarray_sum_improved(s, arr):
     """
     Time Complexity: O(N)
+    Space Complexity: O(1)
     :param s:
     :param arr:
     :return:
