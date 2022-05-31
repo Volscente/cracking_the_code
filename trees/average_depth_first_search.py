@@ -44,12 +44,15 @@ None
 None
 
 11 - 4
-{0: [4], 1: [6, 10], 2: [3, 4, 11], 3: []4}
+{0: [4], 1: [6, 10], 2: [3, 4, 11], 3: [4]}
 
 12 -
 None
 
 13 - None
+
+Time Complexity: O(n)
+Space Complexity: O(n)
 """
 
 
