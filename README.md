@@ -245,3 +245,28 @@ Here is a visual representation of the above discussion:
 ![img_1.png](./images/img_7.png)
 
 
+### Happy Number
+Any number will be called a happy number if, after repeatedly replacing 
+it with a number equal to the sum of the square of all of its digits, 
+leads us to number ‘1’. All other (not-happy) numbers will never reach ‘1’. 
+Instead, they will be stuck in a cycle of numbers which does not include ‘1’.
+
+**Example 1**
+``` python
+Input: 23   
+Output: true (23 is a happy number)  
+Explanations: Here are the steps to find out that 23 is a happy number:
+```
+![img_1.png](./images/img_8.png)
+
+**Example 2**
+``` python
+Input: 12   
+Output: false (12 is not a happy number)  
+Explanations: Here are the steps to find out that 12 is not a happy number:
+```
+![img_1.png](./images/img_9.png)
+
+Step ‘13’ leads us back to step ‘5’ as the number becomes equal to ‘89’, 
+this means that we can never reach ‘1’, 
+therefore, ‘12’ is not a happy number.
