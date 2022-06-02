@@ -199,7 +199,6 @@ The time complexity of the above algorithm will be O(N).
 
 <br>
 
-
 ## Fast & Slow Pointers
 
 The Fast & Slow pointer approach, also known as the Hare & Tortoise algorithm, 
@@ -295,3 +294,51 @@ Explanations: Here are the steps to find out that 12 is not a happy number:
 Step ‘13’ leads us back to step ‘5’ as the number becomes equal to ‘89’, 
 this means that we can never reach ‘1’, 
 therefore, ‘12’ is not a happy number.
+
+<br>
+
+## Merge Intervals
+This pattern describes an efficient technique to deal with overlapping 
+intervals. In a lot of problems involving intervals, 
+we either need to find overlapping intervals or merge intervals if 
+they overlap.
+
+Given two intervals (‘a’ and ‘b’), there will be six different ways 
+the two intervals can relate to each other:
+![img_2.png](./images/img_10.png)
+
+### Merge Intervals
+Given a list of intervals, merge all the overlapping intervals to produce 
+a list that has only mutually exclusive intervals.
+
+``` python
+Intervals: [[1,4], [2,5], [7,9]]
+Output: [[1,5], [7,9]]
+Explanation: Since the first two intervals [1,4] and [2,5] overlap, 
+we merged them into one [1,5].
+```
+![img_2.png](./images/img_11.png)
+
+**Solution**
+Let’s take the example of two intervals (‘a’ and ‘b’) such that a.start 
+<= b.start. There are four possible scenarios:
+
+![img_2.png](./images/img_12.png)
+
+Our goal is to merge the intervals whenever they overlap. 
+For the above-mentioned three overlapping scenarios (2, 3, and 4), 
+this is how we will merge them:
+
+![img_2.png](./images/img_13.png)
+
+The diagram above clearly shows a merging approach. 
+Our algorithm will look like this:
+
+1. Sort the intervals on the start time to ensure a.start <= b.start
+2. If ‘a’ overlaps ‘b’ (i.e. b.start <= a.end),
+we need to merge them into a new interval ‘c’ such that:
+``` python
+c.start = a.start
+c.end = max(a.end, b.end)
+```
+3. We will keep repeating the above two steps to merge ‘c’ with the next interval if it overlaps with ‘c’.
