@@ -406,10 +406,24 @@ This way, we will go through all numbers and place them at their correct
 indices, hence, sorting the whole array.
 
 Let’s see this visually with the above-mentioned Example-2:
-![img_2.png](./images/img_14.png)
-![img_2.png](./images/img_15.png)
+![img_14.png](./images/img_14.png)
+![img_15.png](./images/img_15.png)
 
 
+<br>
 
 
+## In-place Reversal of a LinkedList
+In a lot of problems, we are asked to reverse the links between a set of nodes 
+of a LinkedList. Often, the constraint is that we need to do this in-place, 
+i.e., using the existing node objects and without using extra memory.
 
+``` python
+Given the head of a Singly LinkedList, reverse the LinkedList. 
+Write a function to return the new head of the reversed LinkedList.
+```
+![img_16.png](./images/img_16.png)
+
+To reverse a LinkedList, we need to reverse one node at a time. We will start with a variable current which will initially point to the head of the LinkedList and a variable previous which will point to the previous node that we have processed; initially previous will point to null.
+
+In a stepwise manner, we will reverse the current node by pointing it to the previous before moving on to the next node. Also, we will update the previous to always point to the previous node that we have processed. Here is the visual representation of our algorithm:
