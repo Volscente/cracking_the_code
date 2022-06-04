@@ -65,7 +65,7 @@ class Node:
         self.right_child = None
 
 
-def _breadth_first_search(node, dict, depth=0):
+def _depth_first_search(node, dict, depth=0):
 
     if node is None:
 
@@ -77,8 +77,8 @@ def _breadth_first_search(node, dict, depth=0):
 
     dict[depth].append(node.value)
 
-    _breadth_first_search(node.left_child, dict, depth + 1)
-    _breadth_first_search(node.right_child, dict, depth + 1)
+    _depth_first_search(node.left_child, dict, depth + 1)
+    _depth_first_search(node.right_child, dict, depth + 1)
 
 
 def avg_by_depth(node):
@@ -86,7 +86,7 @@ def avg_by_depth(node):
     avg_dict = {}
     output = []
 
-    _breadth_first_search(node, avg_dict)
+    _depth_first_search(node, avg_dict)
 
     for depth in avg_dict.keys():
 
