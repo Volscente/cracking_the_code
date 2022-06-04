@@ -36,6 +36,7 @@ def compute_path_sum(current_node, current_path, max_sum, path_sum, path_max_sum
         compute_path_sum(current_node.left, current_path, max_sum, path_sum, path_max_sum)
         compute_path_sum(current_node.right, current_path, max_sum, path_sum, path_max_sum)
     del current_path[-1]
+    path_sum = 0
 
     print(path_max_sum)
     print('Max sum: ' + str(max_sum))
