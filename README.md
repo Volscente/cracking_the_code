@@ -424,6 +424,67 @@ Write a function to return the new head of the reversed LinkedList.
 ```
 ![img_16.png](./images/img_16.png)
 
-To reverse a LinkedList, we need to reverse one node at a time. We will start with a variable current which will initially point to the head of the LinkedList and a variable previous which will point to the previous node that we have processed; initially previous will point to null.
+To reverse a LinkedList, we need to reverse one node at a time.
+We will start with a variable current which will initially point 
+to the head of the LinkedList and a variable previous which will 
+point to the previous node that we have processed; initially previous 
+will point to null.
 
-In a stepwise manner, we will reverse the current node by pointing it to the previous before moving on to the next node. Also, we will update the previous to always point to the previous node that we have processed. Here is the visual representation of our algorithm:
+In a stepwise manner, we will reverse the current node by pointing
+it to the previous before moving on to the next node. 
+Also, we will update the previous to always point to the previous 
+node that we have processed.
+
+
+<br>
+
+
+## Tree Breadth First Search
+
+This pattern is based on the **Breadth First Search (BFS)** technique to traverse a tree.
+
+Any problem involving the traversal of a tree in a level-by-level 
+order can be efficiently solved using this approach. 
+We will use a Queue to keep track of all the nodes of a level before we 
+jump onto the next level. This also means that the space complexity of the 
+algorithm will be O(W), where ‘W’ is the maximum number of nodes on any level.
+
+Let’s jump onto our first problem to understand this pattern.
+
+### Queue
+It is a linear data structure that follows a particular order in which the operations are performed:
+FIFO (First In First Out). 
+
+### Binary Tree Level Order Traversal (BFS)
+Given a binary tree, populate an array to represent its level-by-level traversal. 
+You should populate the values of all nodes of each level from left 
+to right in separate sub-arrays.
+
+![img_17.png](./images/img_17.png)
+
+**Solution**
+
+Since we need to traverse all nodes of each level before moving onto the next level, 
+we can use the Breadth First Search (BFS) technique to solve this problem.
+
+We can use a Queue to efficiently traverse in BFS fashion. 
+Here are the steps of our algorithm:
+
+1. Start by pushing the root node to the queue.
+2. Keep iterating until the queue is empty.
+3. In each iteration, first count the elements in the queue (let’s call it levelSize). 
+We will have these many nodes in the current level.
+4. Next, remove levelSize nodes from the queue and push their value 
+in an array to represent the current level.
+5. After removing each node from the queue, insert both of its children into the queue.
+6. If the queue is not empty, repeat from step 3 for the next level.
+
+Let’s take the example-2 mentioned above to visually represent our algorithm:
+
+![img_18.png](./images/img_18.png)
+![img_19.png](./images/img_19.png)
+![img_20.png](./images/img_20.png)
+![img_21.png](./images/img_21.png)
+![img_22.png](./images/img_22.png)
+![img_23.png](./images/img_23.png)
+![img_24.png](./images/img_24.png)
