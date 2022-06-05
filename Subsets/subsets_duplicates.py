@@ -8,6 +8,9 @@ Output: [], [1], [3], [1,3], [3,3], [1,3,3]
 Example 2:
 Input: [1, 5, 3, 3]
 Output: [], [1], [5], [3], [1,5], [1,3], [5,3], [1,5,3], [3,3], [1,3,3], [3,3,5], [1,5,3,3]
+
+Time Complexity: O(N) fetch numbers O(2^N) fetch the subsets (since they double) -> O(N * 2^N)
+Space Complexity: O(N * 2^N) -> nums dimension per subsets dimension
 """
 
 
