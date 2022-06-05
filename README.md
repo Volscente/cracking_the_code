@@ -451,6 +451,15 @@ algorithm will be O(W), where ‘W’ is the maximum number of nodes on any leve
 
 Let’s jump onto our first problem to understand this pattern.
 
+### Binary Tree
+**1. Full Binary Tree -** Every node has 0 or 2 children.
+
+**2. Complete Binary Tree -** Every level is completely filled except possible the last
+
+**3. Perfect Binary Tree -** All internal nodes have two children and all leaf 
+nodes are at the same level
+
+
 ### Queue
 It is a linear data structure that follows a particular order in which the operations are performed:
 FIFO (First In First Out). 
@@ -502,3 +511,112 @@ This also means that the space complexity of the algorithm will be O(H),
 where ‘H’ is the maximum height of the tree.
 
 Let’s jump onto our first problem to understand this pattern.
+
+
+<br>
+
+## Two Heaps
+In many problems, where we are given a set of elements such 
+that we can divide them into two parts. 
+We are interested in knowing the smallest element in one part and the biggest 
+element in the other part. The Two Heaps pattern is an efficient approach 
+to solve such problems.
+
+As the name suggests, this pattern uses two Heaps; 
+A Min Heap to find the smallest element and a Max Heap to find the biggest element.
+
+Let’s jump onto our first problem to see this pattern in action.
+
+### Heap
+A heap is a special complete binary tree in which the nodes follow the rules:
+1. Min-Heap - Parents have a value lesser than the children (root is min)
+2. Max-Heap - Parents have a value greater than the children (root is max)
+
+
+### Problem Statement
+
+Design a class to calculate the median of a number stream. 
+The class should have the following two methods:
+
+1. insertNum(int num): stores the number in the class
+2. findMedian(): returns the median of all numbers inserted in the class
+
+If the count of numbers inserted in the class is even, 
+the median will be the average of the middle two numbers.
+
+Example 1:
+1. insertNum(3)
+2. insertNum(1)
+3. findMedian() -> output: 2
+4. insertNum(5)
+5. findMedian() -> output: 3
+6. insertNum(4)
+7. findMedian() -> output: 3.5
+
+**Solution**
+
+Assume ‘x’ is the median of a list. 
+This means that half of the numbers in the list will be smaller than (or equal to) ‘x’
+and half will be greater than (or equal to) ‘x’. 
+This leads us to an approach where we can divide the list into two halves: 
+one half to store all the smaller numbers (let’s call it smallNumList) and one half 
+to store the larger numbers (let’s call it largeNumList). 
+The median of all the numbers will either be the largest number in the smallNumList 
+or the smallest number in the largeNumList. If the total number of elements is even, 
+the median will be the average of these two numbers.
+
+The best data structure that comes to mind to find the smallest or largest 
+number among a list of numbers is a Heap. Let’s see how we can use a heap to find 
+a better algorithm.
+
+1. We can store the first half of numbers (i.e., smallNumList) in a Max Heap. 
+We should use a Max Heap as we are interested in knowing the largest number in 
+the first half.
+2. We can store the second half of numbers (i.e., largeNumList) in a Min Heap, 
+as we are interested in knowing the smallest number in the second half.
+3. Inserting a number in a heap will take O(logN), which is better than the 
+brute force approach (it takes O(N) with insertion sort).
+4. At any time, the median of the current list of numbers can be calculated 
+from the top element of the two heaps.
+
+**Procedure Example 1**
+1. **insertNum(3)**: We can insert a number in the Max Heap (i.e. first half) 
+if the number is smaller than the top (largest) number of the heap. 
+After every insertion, we will balance the number of elements in both heaps, 
+so that they have an equal number of elements. 
+If the count of numbers is odd, let’s decide to have more numbers in Max Heap 
+than the Min Heap.
+
+![img_25.png](./images/img_25.png)
+
+2. **insertNum(1)**: As ‘1’ is smaller than ‘3’, let’s insert it into the Max Heap.
+
+![img_26.png](./images/img_26.png)
+
+Now, we have two elements in the Max Heap and no elements in Min Heap. 
+Let’s take the largest element from the Max Heap and insert it into the Min Heap, 
+to balance the number of elements in both heaps.
+
+![img_27.png](./images/img_27.png)
+
+3. **findMedian()**: As we have an even number of elements, the median will be the average of the top element of both the heaps -> (1+3)/2 = 2.0
+(1+3)/2=2.0
+4. **insertNum(5)**: As ‘5’ is greater than the top element of the Max Heap, 
+we can insert it into the Min Heap. After the insertion, 
+the total count of elements will be odd. As we had decided to have more 
+numbers in the Max Heap than the Min Heap, we can take the top (smallest) 
+number from the Min Heap and insert it into the Max Heap.
+
+![img_28.png](./images/img_28.png)
+
+5. **findMedian()**: Since we have an odd number of elements, 
+the median will be the top element of Max Heap -> 3. 
+An odd number of elements also means that the Max Heap will have one extra 
+element than the Min Heap.
+
+6. **insertNum(4)**: Insert ‘4’ into Min Heap.
+
+![img_29.png](./images/img_29.png)
+
+7. **findMedian()**: As we have an even number of elements, 
+the median will be the average of the top element of both the heaps -> (3+4)/2 = 3.5
