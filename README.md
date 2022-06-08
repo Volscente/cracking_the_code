@@ -764,3 +764,43 @@ We can compare the numbers pointed out by start and end index to find
 the sort order. If arr[start] < arr[end], it means that the numbers 
 are sorted in ascending order otherwise they are sorted in the descending 
 order.
+
+
+<br>
+
+
+## Bitwise XOR
+XOR is a logical bitwise operator that returns 0 (false) if both bits 
+are the same and returns 1 (true) otherwise. 
+In other words, it only returns 1 if exactly one bit is set to 1 out 
+of the two bits in comparison.
+
+![img_30.png](./images/img_30.png)
+
+It is surprising to know the approaches that the XOR operator enables
+us to solve certain problems. For example, let’s take a look at the 
+following problem:
+
+```
+Given an array of n-1 integers in the range from 1 to n
+find the one number that is missing from the array.
+
+Example:
+Input: 1, 5, 2, 6, 4
+Answer: 3
+```
+
+Remember the important property of XOR that it returns 0 if both the bits
+in comparison are the same. In other words, XOR of a number with itself 
+will always result in 0. This means that if we XOR all the numbers in 
+the input array with all numbers from the range 1 to n
+then each number in the input is going to get zeroed out except the 
+missing number. Following are the set of steps to find the missing 
+number using XOR:
+
+1. XOR all the numbers from 1 to n , let’s call it x1.
+X2. OR all the numbers in the input array, let’s call it x2.
+2. The missing number can be found by x1 XOR x
+
+
+
