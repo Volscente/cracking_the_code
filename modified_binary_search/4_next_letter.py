@@ -1,6 +1,5 @@
 """
-
-Problem Statement#
+Problem Statement
 Given an array of lowercase letters sorted in ascending order,
 find the smallest letter in the given array greater than a given ‘key’.
 
@@ -28,6 +27,9 @@ Example 4:
 Input: ['a', 'c', 'f', 'h'], key = 'h'
 Output: 'a'
 Explanation: As the array is assumed to be circular, the smallest letter greater than 'h' is 'a'.
+
+Time Complexity: O(logN)
+Space Complexity: O(1)
 """
 
 
