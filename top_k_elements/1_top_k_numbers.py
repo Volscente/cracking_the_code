@@ -8,6 +8,9 @@ Output: [5, 12, 11]
 Example 2:
 Input: [5, 12, 11, -1, 12], K = 3
 Output: [12, 11, 12]
+
+Time Complexity: O(K * logK + (N-K) * logK) -> O(N * logK)
+Space Complexity: O(K)
 """
 
 from heapq import *
@@ -16,11 +19,14 @@ from heapq import *
 def find_k_largest_numbers(nums, k):
     min_heap = []
 
+    # O(K * logK)
     for i in range(k):
         heappush(min_heap, nums[i])
 
+    # O(N-K)
     for i in range(k, len(nums)):
 
+        # O(logK)
         if nums[i] > min_heap[0]:
             heappop(min_heap)
             heappush(min_heap, nums[i])
