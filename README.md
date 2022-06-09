@@ -842,7 +842,7 @@ If we iterate through the array one element at a time and keep ‘K’ largest n
 in a heap such that each time we find a larger number than the smallest number in the heap, 
 we do two things:
 
-1. 2Take out the smallest number from the heap, and 
+1. Take out the smallest number from the heap, and 
 2. Insert the larger number into the heap.
 
 This will ensure that we always have ‘K’ largest numbers in the heap. 
