@@ -35,4 +35,18 @@ def single_number(arr):
         # XOR each number with the following one
         x1 = x1 ^ num
 
+        print(num)
+        print(x1)
+        print('\n')
+
     return x1
+
+
+def main():
+
+    arr = [1, 2, 3, 2, 3]
+    print(single_number(arr))
+
+
+main()
+
