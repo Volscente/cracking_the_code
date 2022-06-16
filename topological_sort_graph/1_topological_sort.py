@@ -57,9 +57,20 @@ def topological_sort(vertices, edges):
             if in_degree[child] == 0:
                 sources.append(child)
 
+    # Avoid Directed Acyclic Graph
+    if len(sorted_list) != vertices:
+        return []
+
     return sorted_list
 
 
+def main():
+    print("Topological sort: " +
+          str(topological_sort(4, [[3, 2], [3, 0], [2, 0], [2, 1]])))
+    print("Topological sort: " +
+          str(topological_sort(5, [[4, 2], [4, 3], [2, 0], [2, 1], [3, 1]])))
+    print("Topological sort: " +
+          str(topological_sort(7, [[6, 4], [6, 2], [5, 3], [5, 4], [3, 0], [3, 1], [3, 2], [4, 1]])))
 
 
-
+main()
