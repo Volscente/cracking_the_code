@@ -59,6 +59,7 @@ def topological_sort(vertices, edges):
 
     # Avoid Directed Acyclic Graph
     if len(sorted_list) != vertices:
+        # Return True for 'Problem 1: Find if a given Directed Graph has a cycle in it or n'
         return []
 
     return sorted_list
