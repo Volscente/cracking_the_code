@@ -1111,3 +1111,20 @@ Since we have two changing values (capacity and currentIndex) in our recursive f
 we can use a two-dimensional array to store the results of all the solved sub-problems. As mentioned above, 
 we need to store results for every sub-array (i.e., for every possible index ‘i’) and every possible capacity ‘c.’
 
+#### Bottom-up Dynamic Programming
+Let’s try to populate our dp[][] array from the above solution by working in a bottom-up fashion. 
+Essentially, we want to find the maximum profit for every sub-array and every possible capacity. 
+This means that dp[i][c] will represent the maximum knapsack profit for capacity ‘c’ calculated from the first ‘i’ items.
+
+So, for each item at index ‘i’ (0 <= i < items.length) and capacity ‘c’ (0 <= c <= capacity), we have two options:
+1. Exclude the item at index ‘i.’ 
+In this case, we will take whatever profit we get from the sub-array excluding this item => dp[i-1][c]
+2. Include the item at index ‘i’ if its weight is not more than the capacity. 
+In this case, we include its profit plus whatever profit we get from the remaining capacity and from remaining 
+items => profit[i] + dp[i-1][c-weight[i]]
+
+Finally, our optimal solution will be maximum of the above two values:
+```
+dp[i][c] = max (dp[i-1][c], profit[i] + dp[i-1][c-weight[i]])
+```
+
