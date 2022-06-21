@@ -1098,3 +1098,9 @@ Let’s try to put various combinations of fruits in the knapsack, such that the
 
 This shows that Banana + Melon is the best combination as it gives us the maximum profit, 
 and the total weight does not exceed the capacity.
+
+#### Basic Solution
+A basic brute-force solution could be to try all combinations of the given items (as we did above), 
+allowing us to choose the one with maximum profit and a weight that doesn’t exceed ‘C’.
+
+#### Top-down Dynamic Programming with Memoization
