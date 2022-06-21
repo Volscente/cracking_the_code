@@ -3,6 +3,15 @@ def solve_knapsack(profits, weights, capacity):
 
 
 def knapsack_recursive(profits, weights, capacity, currentIndex):
+    """
+    Time Complexity: O(2^N)
+    Space Complexity: O(N) -> Store the recursion stack
+    :param profits:
+    :param weights:
+    :param capacity:
+    :param currentIndex:
+    :return:
+    """
     # base checks
     if capacity <= 0 or currentIndex >= len(profits):
         return 0
