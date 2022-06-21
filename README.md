@@ -1104,3 +1104,10 @@ A basic brute-force solution could be to try all combinations of the given items
 allowing us to choose the one with maximum profit and a weight that doesn’t exceed ‘C’.
 
 #### Top-down Dynamic Programming with Memoization
+Memoization is when we store the results of all the previously solved sub-problems 
+and return the results from memory if we encounter a problem that has already been solved.
+
+Since we have two changing values (capacity and currentIndex) in our recursive function knapsackRecursive(), 
+we can use a two-dimensional array to store the results of all the solved sub-problems. As mentioned above, 
+we need to store results for every sub-array (i.e., for every possible index ‘i’) and every possible capacity ‘c.’
+
