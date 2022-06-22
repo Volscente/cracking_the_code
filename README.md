@@ -1128,3 +1128,20 @@ Finally, our optimal solution will be maximum of the above two values:
 dp[i][c] = max (dp[i-1][c], profit[i] + dp[i-1][c-weight[i]])
 ```
 
+# Algorithm Recap
+
+1. **Sliding Windows** - It is used when dealing with subarrays of a certain array
+2. **Two Pointers** - It is used with sorted array (or after sorting them) to find a subset of elements satistyfing
+certain conditions
+3. **Fast & Slow Pointers** - It is used when dealing with Cyclic LinkedList or Arrays
+4. **Merge Intervals** - It is used when dealing with overlapping intervals (e.g., [[1, 5], [2, 5], [6, 8]])
+5. **Cyclic Sort** - It is used when dealing with arrays in a given range of numbers
+6. **In-place Reversal of a LinkedList**
+7. **Tree Breadth First Search** - It involves traversing a tree level-by-leve
+8. **Tree Depth First Search** - It involves traversing a tree one branch at a time
+9. **Two Heaps** - It is used when we need to divide a set of numbers in two, maybe to find the median
+10. **Subsets** - It uses the BFS to deal with permutations and Combinations
+11. **Bitwise XOR**
+12. **Top K Elements** - It involves using a Heap when dealing with problem that involve finding the top/smallest/frequent k elements
+13. **K-way Merge** - It uses a Heap to deal with a list of sorted arrays
+14. **Topological Sort Graph**
