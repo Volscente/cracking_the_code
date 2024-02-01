@@ -46,9 +46,28 @@ def remove_duplicates(arr):
             
     return len(arr[:start + 1])
 
+def make_squares(arr):
+
+    new_arr = []
+
+    for elem in arr:
+
+        square = elem * elem
+
+        if len(new_arr) == 0:
+
+            new_arr.append(square)
+
+        else:
+
+            if new_ar
+        
+
 
 print(find_target_sum([1, 2, 3, 4, 6], 6)) # [1, 3]
 
 print(remove_duplicates([2, 3, 3, 3, 6, 9, 9])) # 4
+
+print(make_squares([[-2, -1, 0, 2, 3]])) # [0, 1, 4, 4, 9]
 
         
