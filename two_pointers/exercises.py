@@ -24,7 +24,9 @@ def find_target_sum(arr, target_sum):
     return [-1, -1]
 
 def remove_duplicates(arr):
-
+    """
+    Given an ordered array of numbers, remove duplicates by pushing back to the end of the array in place and return the length of the sub-sequence of non-duplicate numbers
+    """
 
     start, end = 0, 1
 
@@ -43,31 +45,43 @@ def remove_duplicates(arr):
 
             start += 1
             end += 1
-            
+
     return len(arr[:start + 1])
 
 def make_squares(arr):
 
-    new_arr = []
+    square_arr = [0 for x in range(len(arr))]
 
-    for elem in arr:
+    left, right = 0, len(arr) - 1
 
-        square = elem * elem
+    highest_square_index = len(arr) - 1
 
-        if len(new_arr) == 0:
+    while left <= right:
 
-            new_arr.append(square)
+        square_left = arr[left] * arr[left]
+        square_right = arr[right] * arr[right]
+
+        if square_left > square_right:
+
+            square_arr[highest_square_index] = square_left
+            left += 1
 
         else:
 
-            if new_ar
-        
+            square_arr[highest_square_index] = square_right
+            right -= 1
+
+        highest_square_index -= 1
+
+    return square_arr
+
+
 
 
 print(find_target_sum([1, 2, 3, 4, 6], 6)) # [1, 3]
 
 print(remove_duplicates([2, 3, 3, 3, 6, 9, 9])) # 4
 
-print(make_squares([[-2, -1, 0, 2, 3]])) # [0, 1, 4, 4, 9]
+print(make_squares([-2, -1, 0, 2, 3])) # [0, 1, 4, 4, 9]
 
         
