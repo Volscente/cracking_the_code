@@ -18,7 +18,7 @@ def remove_duplicates(arr):
     start = 0
     end = 1
 
-    for i in range(len(arr)):
+    for i in range(len(arr) - 1):
 
         if arr[start] > arr[end]:
             return len(arr[:start + 1])
