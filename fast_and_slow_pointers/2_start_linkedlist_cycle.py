@@ -22,7 +22,12 @@ Let’s assume that the length of the cycle is ‘K’ nodes.
 Their meeting point will be the start of the cycle.
 
 
-Time Complexity: Finding cycle is O(N), calculate cycle length is O(N) and find the starting point is O(N) -> O(N)
+Time Complexity:
+    - Finding cycle is O(N)
+    - Calculate cycle length is O(N)
+    - Find the starting point is O(N)
+        - Total: O(N)
+        
 Space Complexity: O(1)
 """
 
