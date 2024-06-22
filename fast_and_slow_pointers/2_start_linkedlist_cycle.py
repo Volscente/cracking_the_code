@@ -101,13 +101,13 @@ def main():
     head.next.next.next.next.next = Node(6)
 
     head.next.next.next.next.next.next = head.next.next
-    print("LinkedList cycle start: " + str(find_cycle_start(head).value))
+    print("LinkedList cycle start: " + str(find_cycle_start(head).value)) # 3
 
     head.next.next.next.next.next.next = head.next.next.next
-    print("LinkedList cycle start: " + str(find_cycle_start(head).value))
+    print("LinkedList cycle start: " + str(find_cycle_start(head).value)) # 4
 
     head.next.next.next.next.next.next = head
-    print("LinkedList cycle start: " + str(find_cycle_start(head).value))
+    print("LinkedList cycle start: " + str(find_cycle_start(head).value)) # 1
 
 
 main()
