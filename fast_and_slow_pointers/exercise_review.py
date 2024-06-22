@@ -1,26 +1,37 @@
-def compute_sum_of_square(num):
+class Node:
+    def __init__(self, value, next=None):
+        self.value = value
+        self.next = next
 
-    num_list = [int(x) for x in str(num)]
+def has_cycle(head):
 
-    num_square_list = [x * x for x in num_list]
+    slow, fast = head, head
 
-    return sum(num_square_list)
+    while fast is not None and fast.next is not None:
 
-def find_happy_number(num):
-
-    slow, fast = num, num
-
-    while fast != 1:
-
-        slow = compute_sum_of_square(slow)
-        fast = compute_sum_of_square(compute_sum_of_square(fast))
+        slow = slow.next
+        fast = fast.next.next
 
         if slow == fast:
 
-            return False
-        
-    return True
+            return True
+
+    return False
+
+def main():
+    head = Node(1)
+    head.next = Node(2)
+    head.next.next = Node(3)
+    head.next.next.next = Node(4)
+    head.next.next.next.next = Node(5)
+    head.next.next.next.next.next = Node(6)
+    print("LinkedList has cycle: " + str(has_cycle(head)))
+
+    head.next.next.next.next.next.next = head.next.next
+    print("LinkedList has cycle: " + str(has_cycle(head)))
+
+    head.next.next.next.next.next.next = head.next.next.next
+    print("LinkedList has cycle: " + str(has_cycle(head)))
 
 
-print(find_happy_number(12))
-print(find_happy_number(23))
+main()
