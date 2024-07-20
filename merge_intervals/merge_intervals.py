@@ -17,7 +17,7 @@ Intervals: [[1,4], [2,6], [3,5]]
 Output: [[1,6]]
 Explanation: Since all the given intervals overlap, we merged them into one.
 
-Time Complexity: Sort = O(logN) + Fetch = O(N) -> O(N * logN)
+Time Complexity: Sort = O(N * logN) + Fetch = O(N) -> O(N * logN)
 Space Complexity: O(N) -> merged_intervals
 """
 
@@ -55,6 +55,7 @@ def merge(intervals):
 
         else:
 
+            # Not overlap
             merged_intervals.append(Interval(start, end))
             start = interval.start
             end = interval.end
