@@ -503,7 +503,7 @@ Let’s take the example-2 mentioned above to visually represent our algorithm:
 
 
 ## Tree Depth First Search
-This pattern is based on the ** Depth First Search (DFS)** technique to traverse a tree.
+This pattern is based on the **Depth First Search (DFS)** technique to traverse a tree.
 
 We will be using recursion (or we can also use a stack for the iterative approach) 
 to keep track of all the previous (parent) nodes while traversing. 
