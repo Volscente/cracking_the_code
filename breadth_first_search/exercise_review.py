@@ -3,31 +3,43 @@ from collections import deque
 class TreeNode:
 
     def __init__(self, val):
+
         self.val = val
-        self.left = None
-        self.right = None
+        self.left, self.right = None, None
+
 
 def traverse(root):
 
-    results = []
+    result = []
 
     if root is None:
-
-        return results
+        return result
     
     queue = deque()
+
     queue.append(root)
+
+    reverse = False
 
     while queue:
 
-        level_size = len(queue)
+        current_level_length = len(queue)
 
-        level_nodes = []
+        current_level_nodes = deque()
 
-        for _ in range(level_size):
+        for i in range(current_level_length):
 
             current_node = queue.popleft()
-            level_nodes.append(current_node.val)
+
+            print(current_node.val)
+
+            if reverse:
+
+                current_level_nodes.appendleft(current_node.val)
+
+            else:
+
+                current_level_nodes.append(current_node.val)
 
             if current_node.left:
 
@@ -37,18 +49,24 @@ def traverse(root):
 
                 queue.append(current_node.right)
 
-        results.append(level_nodes)
+        reverse = not reverse
 
-    return results
+        result.append(current_level_nodes)
+
+    return result
+
 
 def main():
+
     root = TreeNode(12)
     root.left = TreeNode(7)
     root.right = TreeNode(1)
     root.left.left = TreeNode(9)
     root.right.left = TreeNode(10)
     root.right.right = TreeNode(5)
-    print("Level order traversal: " + str(traverse(root)))
+    root.right.left.left = TreeNode(20)
+    root.right.left.right = TreeNode(17)
+    print("Zigzag traversal: " + str(traverse(root)))
 
 
 main()

@@ -1,4 +1,8 @@
 def find_averages_of_subarrays(k, arr):
+    """
+    Time Complexity: O(N)
+    Space Complexity: O(K)
+    """
 
     result = []
 
@@ -45,7 +49,7 @@ def main():
     # result = find_averages_of_subarrays(k, arr)
     # print("Averages of subarrays of size K: " + str(result))
 
-    visualize_sliding_window(k, arr)
+    visualize_sliding_window(k, arr) # Solution: [2.2, 2.8, 2.4, 3.6, 2.8]
 
 
 main()
