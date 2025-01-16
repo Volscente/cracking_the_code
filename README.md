@@ -454,7 +454,7 @@ Let’s jump onto our first problem to understand this pattern.
 ### Binary Tree
 **1. Full Binary Tree -** Every node has 0 or 2 children.
 
-**2. Complete Binary Tree -** Every level is completely filled except possible the last
+**2. Complete Binary Tree -** All the levels of the tree are filled completely except the lowest level nodes which are filled from as left as possible
 
 **3. Perfect Binary Tree -** All internal nodes have two children and all leaf 
 nodes are at the same level
